@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docker Assignment</title>
+</head>
+<body>
+    <h1>Docker Assignment Successfully Completed!</h1>
+    <p>This Node.js application is running inside a Docker container.</p>
+
+    <button onclick="getVisits()">Check Persistent Visit Count</button>
+
+    <p id="result"></p>
+
+    <script>
+        async function getVisits() {
+            const response = await fetch('/visits');
+            const data = await response.json();
+
+            document.getElementById("result").innerText =
+                `Total Visits: ${data.visits}`;
+        }
+    </script>
+</body>
+</html>
